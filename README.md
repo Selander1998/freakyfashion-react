@@ -1,33 +1,33 @@
 FreakyFashion 2.0! Created using Vite, TypeScript & React. (it´s for school 😎)
 
-## Komma igång lokalt
+## Get going locally
 
-Se till att du har följande installerat:
+Make sure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (inkluderar npm)
+- [Node.js](https://nodejs.org/)
 
-1. Klona repository:
+1. Clone the repository:
    ```sh
    git clone https://github.com/Selander1998/freakyfashion-react.git
    ```
-2. Navigera till projektets directory:
+2. Navigate to project directory:
    ```sh
    cd freakyfashion-react
    ```
-3. Ladda ned nödvändiga paket:
+3. Download necessary packages:
    ```sh
    npm install
    ```
 
-### Starta utvecklingsmiljön
+### Running the project
 
-- För att starta den lokala miljön:
+- To start local environment:
 
 ```sh
 npm run dev
 ```
 
-- För att bygga projektet:
+- To build the project:
 
 ```sh
 npm run build
