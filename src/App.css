@@ -17,3 +17,11 @@ body {
 .nav-link {
 	@apply text-black no-underline hover:text-white visited:text-black active:text-black;
 }
+
+.footer-list-item {
+	@apply hidden list-none ml-4 mr-8 sm:flex sm:flex-row;
+}
+
+.footer-details-span {
+	@apply flex flex-col m-1;
+}
