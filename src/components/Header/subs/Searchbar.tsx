@@ -25,7 +25,7 @@ const SearchBar = () => {
 				placeholder="Sök produkt"
 				value={query}
 				onChange={(e) => setQuery(e.target.value)}
-				className="p-[0.1rem] pl-[1.2rem] w-full rounded-4"
+				className="p-[0.1rem] pl-[1.2rem] w-full rounded-2xl"
 			/>
 		</form>
 	);
