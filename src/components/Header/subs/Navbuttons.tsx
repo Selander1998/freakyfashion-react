@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const NavButtons = () => {
 	return (
-		<nav className="ml-auto">
+		<nav className="flex justify-between gap-[1rem] items-center">
 			<a href="#">
 				<FontAwesomeIcon icon={faHeart} />
 			</a>
