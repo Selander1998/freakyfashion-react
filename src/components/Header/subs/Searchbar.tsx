@@ -13,10 +13,10 @@ const SearchBar = () => {
 	};
 
 	return (
-		<form className="p-[0.2rem] relative w-full sm:w-[18rem]" onSubmit={handleSearch}>
+		<form className="pb-[0.2rem] pt-[0.2rem] relative w-full sm:w-72" onSubmit={handleSearch}>
 			<FontAwesomeIcon
 				icon={faSearch}
-				className="absolute top-0 bottom-0 my-auto mx-0 left-[0.5rem]"
+				className="absolute top-0 bottom-0 my-auto mx-0 left-[0.1rem]"
 			/>
 			<input
 				id="searchInput"
@@ -25,9 +25,10 @@ const SearchBar = () => {
 				placeholder="Sök produkt"
 				value={query}
 				onChange={(e) => setQuery(e.target.value)}
-				className="p-[0.1rem] pl-[1.2rem] w-full rounded-[1rem]"
+				className="p-[0.1rem] pl-[1.2rem] w-full rounded-4"
 			/>
 		</form>
 	);
 };
+
 export default SearchBar;

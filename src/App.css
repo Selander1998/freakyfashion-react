@@ -3,3 +3,17 @@
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+html {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	padding: 1rem;
+}
+
+.nav-link {
+	@apply text-black no-underline hover:text-white visited:text-black active:text-black;
+}
