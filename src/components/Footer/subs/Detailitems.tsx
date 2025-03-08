@@ -9,8 +9,8 @@ const CreateDetailsMenuItem = ({ open, title, subValues, styling }: DetailsMenuI
 	return (
 		<details open={open}>
 			<summary className={`list-none border-2 border-r-0 border-l-0 ${styling}`}>{title}</summary>
-			{subValues.map((value, index) => (
-				<div className="flex flex-col m-1" key={index}>
+			{subValues.map((value) => (
+				<div className="flex flex-col m-1" key={value}>
 					<span>{value}</span>
 				</div>
 			))}
@@ -49,9 +49,9 @@ const MenuItems: MenuItem[] = [
 const DetailsItems = () => {
 	return (
 		<section className="sm:hidden">
-			{MenuItems.map((item, index) => (
+			{MenuItems.map((item) => (
 				<CreateDetailsMenuItem
-					key={`${item.title}-${index}`}
+					key={item.title}
 					open={item.open}
 					title={item.title}
 					subValues={item.subValues}
