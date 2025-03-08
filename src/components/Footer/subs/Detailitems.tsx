@@ -1,5 +1,3 @@
-import React from "react";
-
 interface DetailsMenuItemProps {
 	open: boolean;
 	title: string;
@@ -7,12 +5,7 @@ interface DetailsMenuItemProps {
 	styling: string;
 }
 
-const CreateDetailsMenuItem: React.FC<DetailsMenuItemProps> = ({
-	open,
-	title,
-	subValues,
-	styling,
-}) => {
+const CreateDetailsMenuItem = ({ open, title, subValues, styling }: DetailsMenuItemProps) => {
 	return (
 		<details open={open}>
 			<summary className={`list-none border-2 border-r-0 border-l-0 ${styling}`}>{title}</summary>
