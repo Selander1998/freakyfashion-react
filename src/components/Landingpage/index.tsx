@@ -1,7 +1,13 @@
 import { Spots } from "./subs/Spots";
+import { ArticleCards } from "./subs/ArticleCards";
 
 const Landingpage = () => {
-	return <Spots />;
+	return (
+		<div>
+			<Spots />
+			<ArticleCards />
+		</div>
+	);
 };
 
 export default Landingpage;

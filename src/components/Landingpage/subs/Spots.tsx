@@ -12,10 +12,10 @@ const CreateSpot = () => {
 export const Spots = () => {
 	const Spots = Array(3).fill(CreateSpot);
 	return (
-		<section className="hidden pt-4 lg:flex lg:m-1 lg:gap-4 lg:justify-evenly">
+		<div className="hidden pt-4 lg:flex lg:m-1 lg:gap-4 lg:justify-evenly">
 			{Spots.map((Spot, index) => (
 				<CreateSpot key={index} {...Spot} />
 			))}
-		</section>
+		</div>
 	);
 };
