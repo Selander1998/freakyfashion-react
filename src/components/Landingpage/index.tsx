@@ -1,7 +1,7 @@
 import { Spots } from "./subs/Spots";
 import { ArticleCards } from "./subs/ArticleCards";
 
-const Landingpage = () => {
+export const Landingpage = () => {
 	return (
 		<div>
 			<Spots />
@@ -9,5 +9,3 @@ const Landingpage = () => {
 		</div>
 	);
 };
-
-export default Landingpage;

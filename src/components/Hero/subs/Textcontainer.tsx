@@ -1,4 +1,4 @@
-const TextContainer = () => {
+export const TextContainer = () => {
 	return (
 		<div className="text-center p-2">
 			<h1>Lorem ipsum dolor</h1>
@@ -12,5 +12,3 @@ const TextContainer = () => {
 		</div>
 	);
 };
-
-export default TextContainer;

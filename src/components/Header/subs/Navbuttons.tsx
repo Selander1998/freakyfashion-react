@@ -1,7 +1,7 @@
 import { faHeart, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const NavButtons = () => {
+export const NavButtons = () => {
 	return (
 		<nav className="flex justify-between gap-3 items-center">
 			<a href="#">
@@ -13,5 +13,3 @@ const NavButtons = () => {
 		</nav>
 	);
 };
-
-export default NavButtons;

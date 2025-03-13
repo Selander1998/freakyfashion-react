@@ -1,4 +1,4 @@
-const ListItems = () => {
+export const ListItems = () => {
 	return (
 		<div>
 			<ul className="footer-list-item">
@@ -27,5 +27,3 @@ const ListItems = () => {
 		</div>
 	);
 };
-
-export default ListItems;

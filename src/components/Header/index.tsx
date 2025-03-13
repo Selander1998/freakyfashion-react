@@ -1,9 +1,9 @@
 import { Logo } from "../Logo";
-import SearchBar from "./subs/Searchbar";
-import NavButtons from "./subs/Navbuttons";
-import Navmenu from "./subs/Navmenu";
+import { SearchBar } from "./subs/Searchbar";
+import { NavButtons } from "./subs/Navbuttons";
+import { NavMenu } from "./subs/NavMenu";
 
-const Header = () => {
+export const Header = () => {
 	return (
 		<header className="flex flex-col items-center p-1 sm:flex-row sm:gap-4">
 			<Logo />
@@ -12,10 +12,8 @@ const Header = () => {
 				<NavButtons />
 			</div>
 			<div className="w-full">
-				<Navmenu />
+				<NavMenu />
 			</div>
 		</header>
 	);
 };
-
-export default Header;

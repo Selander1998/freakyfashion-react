@@ -1,7 +1,7 @@
 import { faFaceSmile, faGlobe, faPlane, faShieldAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const NavbarIcons = () => {
+export const NavbarIcons = () => {
 	return (
 		<section className="flex flex-wrap gap-4 justify-around basis-full p-4">
 			<div className="footer-navbar-icon">
@@ -23,5 +23,3 @@ const NavbarIcons = () => {
 		</section>
 	);
 };
-
-export default NavbarIcons;

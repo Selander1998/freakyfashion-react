@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const SearchBar = () => {
+export const SearchBar = () => {
 	const [query, setQuery] = useState<string>("");
 
 	const handleSearch = (e: React.FormEvent) => {
@@ -27,5 +27,3 @@ const SearchBar = () => {
 		</form>
 	);
 };
-
-export default SearchBar;

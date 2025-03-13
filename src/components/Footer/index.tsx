@@ -1,8 +1,8 @@
-import ListItems from "./subs/Listitems";
-import DetailsItems from "./subs/Detailitems";
-import NavbarIcons from "./subs/Navbar";
+import { ListItems } from "./subs/Listitems";
+import { DetailsItems } from "./subs/Detailitems";
+import { NavbarIcons } from "./subs/Navbar";
 
-const Footer = () => {
+export const Footer = () => {
 	return (
 		<footer className="flex flex-col gap-4 mt-4 mb-4 sm:ml-[-4] sm:mr-[-4] sm:border-2 sm:border-l-0 sm:border-r-0">
 			<NavbarIcons />
@@ -11,5 +11,3 @@ const Footer = () => {
 		</footer>
 	);
 };
-
-export default Footer;

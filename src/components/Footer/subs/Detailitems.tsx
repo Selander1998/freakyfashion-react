@@ -46,7 +46,7 @@ const MenuItems: MenuItem[] = [
 	},
 ];
 
-const DetailsItems = () => {
+export const DetailsItems = () => {
 	return (
 		<section className="sm:hidden">
 			{MenuItems.map((item) => (
@@ -62,5 +62,3 @@ const DetailsItems = () => {
 		</section>
 	);
 };
-
-export default DetailsItems;

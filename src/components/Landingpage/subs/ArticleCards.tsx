@@ -5,17 +5,25 @@ import { useArticles } from "../../../hooks/useArticles";
 type CardProps = {
 	name: string;
 	price: number;
+	imageUrl: string;
+	createdAt: Date;
 };
 
-const Card = ({ name, price }: CardProps) => {
+const isItemNew = (createdAt: Date) => {
+	const today = new Date();
+	const dayDifference = (today.getTime() - createdAt.getTime()) / (1000 * 60 * 60 * 24);
+	return dayDifference < 7;
+};
+
+const Card = ({ name, price, imageUrl, createdAt }: CardProps) => {
 	return (
 		<div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-4">
-			<a href="/products/<%= card.slug %>">
-				<img src="https://placehold.co/500x700" alt="<%= card.title %>" className="w-full" />
+			<a href={`/products/${name}`}>
+				<img src={imageUrl} alt={name} className="w-full" />
 			</a>
-			<p className="absolute bg-green-400 top-3 left-3 border-2 p-1">
-				Nyhet - Apply if item is added less than 7 days ago
-			</p>
+			{isItemNew(createdAt) && (
+				<p className="absolute bg-green-400 top-3 left-3 border-2 p-1">Nyhet</p>
+			)}
 			<a href="#" className="absolute right-4 bottom-14">
 				<FontAwesomeIcon icon={faHeart} className="text-2xl" />
 			</a>
@@ -34,7 +42,13 @@ export const ArticleCards = () => {
 		return (
 			<div>
 				{articles.map((article, index) => (
-					<Card key={index} name={article.name} price={article.price} />
+					<Card
+						key={index}
+						name={article.name}
+						price={article.price}
+						imageUrl={article.imageUrl}
+						createdAt={article.createdAt}
+					/>
 				))}
 			</div>
 		);

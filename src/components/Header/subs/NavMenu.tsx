@@ -1,4 +1,4 @@
-const Navmenu = () => {
+export const NavMenu = () => {
 	return (
 		<nav>
 			<ul className="flex flex-col">
@@ -26,5 +26,3 @@ const Navmenu = () => {
 		</nav>
 	);
 };
-
-export default Navmenu;

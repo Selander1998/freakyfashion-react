@@ -1,10 +1,10 @@
 import "./App.css";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Footer from "./components/Footer";
-import Landingpage from "./components/Landingpage";
+import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
+import { Footer } from "./components/Footer";
+import { Landingpage } from "./components/Landingpage";
 
-const App = () => {
+export const App = () => {
 	return (
 		<div className="App">
 			<Header />
@@ -14,5 +14,3 @@ const App = () => {
 		</div>
 	);
 };
-
-export default App;
