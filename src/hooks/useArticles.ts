@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 export type Article = {
 	id: number;
@@ -18,7 +19,7 @@ export const useArticles = (limit: number) => {
 		setLoading(true);
 		const fetchArticles = async (limit: number) => {
 			try {
-				const response = await fetch(`http://192.168.0.6:3030/data/${limit}`);
+				const response = await fetch(`${apiUrl}/data/${limit}`);
 				if (!response.ok) {
 					throw Error(response.statusText);
 				}
