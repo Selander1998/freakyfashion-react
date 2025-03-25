@@ -41,13 +41,13 @@ export const ArticleCards = () => {
 	if (!loading && !error)
 		return (
 			<div>
-				{articles.map((article, index) => (
+				{articles.map((article) => (
 					<Card
-						key={index}
+						key={article.id}
 						name={article.name}
 						price={article.price}
 						imageUrl={article.imageUrl}
-						createdAt={article.createdAt}
+						createdAt={new Date(article.createdAt)}
 					/>
 				))}
 			</div>
