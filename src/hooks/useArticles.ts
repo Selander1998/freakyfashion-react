@@ -6,6 +6,7 @@ export type Article = {
 	name: string;
 	price: number;
 	imageUrl: string;
+	brand: string;
 	createdAt: Date;
 	updatedAt: Date;
 	deletedAt?: Date;
