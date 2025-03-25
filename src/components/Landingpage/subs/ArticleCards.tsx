@@ -16,13 +16,23 @@ const isItemNew = (createdAt: Date) => {
 	return dayDifference < 7;
 };
 
+const isItemHidden = (createdAt: Date) => {
+	const now = new Date();
+	return createdAt.getTime() > now.getTime();
+};
+
 const Card = ({ name, price, imageUrl, brand, createdAt }: CardProps) => {
+	if (isItemHidden(createdAt)) {
+		return null;
+	}
+
 	return (
 		<div className="relative grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-4">
 			{isItemNew(createdAt) && (
-				<p className="absolute bg-green-400 top-7 left-7 border-2 rounded-2xl p-1">Nyhet</p>
+				<p className="absolute bg-green-400 top-7 left-7 border-2 p-1">Nyhet</p>
 			)}
 			<a href={`/products/${name}`}>
+				{/* FIXME: This should be a link like "/products/svart-tshirt" */}
 				<img src={imageUrl} alt={name} className="w-full" />
 			</a>
 			<a href="#" className="absolute right-7 bottom-[6.5rem]">
