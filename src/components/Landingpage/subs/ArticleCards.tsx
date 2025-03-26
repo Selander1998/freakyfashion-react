@@ -32,7 +32,7 @@ const Card = ({ name, price, imageUrl, brand, createdAt }: CardProps) => {
 				<p className="absolute bg-green-400 top-7 left-7 border-2 p-1">Nyhet</p>
 			)}
 			<a href={`/products/${name}`}>
-				{/* FIXME: This should be a link like "/products/svart-tshirt" */}
+				{/* FIXME: This link should look like "/products/svart-tshirt" */}
 				<img src={imageUrl} alt={name} className="w-full" />
 			</a>
 			<a href="#" className="absolute right-7 bottom-[6.5rem]">

@@ -20,7 +20,7 @@ export const useArticles = (limit: number) => {
 		setLoading(true);
 		const fetchArticles = async (limit: number) => {
 			try {
-				const response = await fetch(`${apiUrl}/data/${limit}`);
+				const response = await fetch(`${apiUrl}/api/fetchArticles/${limit}`);
 				if (!response.ok) {
 					throw Error(response.statusText);
 				}

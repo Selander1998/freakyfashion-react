@@ -42,7 +42,7 @@ const MenuItems: MenuItem[] = [
 		open: false,
 		title: "Kundtjänst",
 		subValues: ["Returpolicy", "Integritetspolicy"],
-		styling: "border-b-0",
+		styling: "",
 	},
 ];
 
@@ -58,7 +58,7 @@ export const DetailsItems = () => {
 					styling={item.styling}
 				/>
 			))}
-			<p className="text-center border-2 pt-2 pb-2 sm:mb-8">{"\u00A9"} Freaky Fashion</p>
+			<p className="text-center pt-6 sm:mb-8">{"\u00A9"} Freaky Fashion</p>
 		</section>
 	);
 };
