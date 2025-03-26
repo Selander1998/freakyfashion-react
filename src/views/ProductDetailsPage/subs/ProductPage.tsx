@@ -10,7 +10,6 @@ export const ProductPage = () => {
 
 	useEffect(() => {
 		const fetchArticle = async () => {
-			console.log("finding...", name);
 			try {
 				const response = await fetch(`${apiUrl}/api/fetchArticle/${name}`);
 				if (!response.ok) {
@@ -31,8 +30,6 @@ export const ProductPage = () => {
 
 	if (loading) return <p>Loading...</p>;
 	if (!article) return <h1>Product not found</h1>;
-
-	console.log(article);
 
 	return <ProductCard article={article} />;
 };
