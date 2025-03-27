@@ -1,6 +1,6 @@
 import { Logo } from "../Logo";
 import { SearchBar } from "./subs/Searchbar";
-import { NavButtons } from "./subs/Navbuttons";
+import { NavIcons } from "./subs/NavIcons";
 import { NavMenu } from "./subs/NavMenu";
 
 export const Header = () => {
@@ -9,7 +9,7 @@ export const Header = () => {
 			<Logo />
 			<div className="flex gap-4 w-full justify-between">
 				<SearchBar />
-				<NavButtons />
+				<NavIcons />
 			</div>
 			<div className="w-full">
 				<NavMenu />

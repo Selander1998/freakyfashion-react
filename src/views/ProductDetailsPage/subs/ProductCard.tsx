@@ -1,5 +1,6 @@
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect } from "react";
 
 interface ProductCardProps {
 	article: {
@@ -12,7 +13,11 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ article }: ProductCardProps) => {
-	if (!article) return <p>Could not find product data</p>;
+	useEffect(() => {
+		if (article) {
+			document.title = article.name;
+		}
+	}, [article]);
 	return (
 		<div className="flex flex-col p-4 sm:flex-row sm:gap-4">
 			<div className="relative flex flex-col sm:min-w-2/5 lg:min-w-1/2">

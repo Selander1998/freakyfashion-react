@@ -5,9 +5,14 @@ import { Hero } from "./components/Hero";
 import { Footer } from "./components/Footer";
 import { Landingpage } from "./components/Landingpage";
 import { ProductDetailsPage } from "./views/ProductDetailsPage";
+import { BasketPage } from "./views/BasketPage";
 
 const ConditionalHero = () => {
-	return useLocation().pathname.startsWith("/products/") ? null : <Hero />;
+	const location = useLocation();
+	const paths = ["/products/", "/basket"];
+	const match = location.pathname.startsWith("/products/") || paths.includes(location.pathname);
+
+	return match ? null : <Hero />;
 };
 
 export const App = () => {
@@ -21,6 +26,7 @@ export const App = () => {
 					<Route path="/" element={<Landingpage />} />
 
 					<Route path="/products/:name" element={<ProductDetailsPage />} />
+					<Route path="basket" element={<BasketPage />} />
 				</Routes>
 
 				<Footer />
