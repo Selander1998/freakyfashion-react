@@ -2,7 +2,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
 
-interface ProductCardProps {
+export interface ProductCardProps {
 	article: {
 		name: string;
 		imageUrl: string;
@@ -13,6 +13,18 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ article }: ProductCardProps) => {
+	const addToCart = (article: ProductCardProps["article"]) => {
+		const cocks = localStorage.getItem("cart");
+
+		if (cocks) {
+			const cart = JSON.parse(cocks);
+			localStorage.setItem("cart", JSON.stringify([...cart, article]));
+			return;
+		}
+
+		localStorage.setItem("cart", JSON.stringify([article]));
+	};
+
 	useEffect(() => {
 		if (article) {
 			document.title = article.name;
@@ -29,7 +41,11 @@ export const ProductCard = ({ article }: ProductCardProps) => {
 				<p>{article.brand}</p>
 				<p>{article.description || "Missing description"}</p>
 				<span className="pt-2">{article.price}kr</span>
-				<button className="shadow-2xl p-2 font-bold border-2">Lägg i varukorg</button>
+				<button
+					onClick={() => addToCart(article)}
+					className="shadow-2xl p-2 font-bold border-2 cursor-pointer">
+					Lägg i varukorg
+				</button>
 			</div>
 		</div>
 	);
