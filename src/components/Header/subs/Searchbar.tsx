@@ -1,14 +1,16 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 export const SearchBar = () => {
 	const [query, setQuery] = useState<string>("");
+	const navigate = useNavigate();
 
 	const handleSearch = (e: React.FormEvent) => {
 		e.preventDefault();
 		if (query.trim()) {
-			window.location.href = `/search?query=${query}`;
+			navigate(`/search?query=${encodeURIComponent(query)}`);
 		}
 	};
 
