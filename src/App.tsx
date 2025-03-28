@@ -8,6 +8,7 @@ import { ProductDetailsPage } from "./views/ProductDetailsPage";
 import { BasketPage } from "./views/BasketPage";
 import { CheckoutPage } from "./views/CheckoutPage";
 import { SearchPage } from "./views/SearchPage";
+import { AdminProductListPage } from "./views/AdminPages/ProductListPage";
 
 const ConditionalHero = () => {
 	const location = useLocation();
@@ -18,12 +19,14 @@ const ConditionalHero = () => {
 };
 
 export const App = () => {
-	return (
-		<div className="App">
-			<BrowserRouter>
-				<Header />
-				<ConditionalHero />
+	const isAdminRoute = location.pathname.startsWith("/admin");
 
+	return (
+		<div className={`App ${isAdminRoute ? "p-0" : "p-4"}`}>
+			<BrowserRouter>
+				{!isAdminRoute && <Header />}
+				{!isAdminRoute && <ConditionalHero />}{" "}
+				{/* Multilayered check or whatever, who cares lmao */}
 				<Routes>
 					<Route path="/" element={<Landingpage />} />
 
@@ -31,9 +34,9 @@ export const App = () => {
 					<Route path="basket" element={<BasketPage />} />
 					<Route path="checkout" element={<CheckoutPage />} />
 					<Route path="search" element={<SearchPage />} />
+					<Route path="admin/products" element={<AdminProductListPage />} />
 				</Routes>
-
-				<Footer />
+				{!isAdminRoute && <Footer />}
 			</BrowserRouter>
 		</div>
 	);
