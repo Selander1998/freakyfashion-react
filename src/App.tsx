@@ -6,6 +6,7 @@ import { Footer } from "./components/Footer";
 import { Landingpage } from "./components/Landingpage";
 import { ProductDetailsPage } from "./views/ProductDetailsPage";
 import { BasketPage } from "./views/BasketPage";
+import { CheckoutPage } from "./views/CheckoutPage";
 
 const ConditionalHero = () => {
 	const location = useLocation();
@@ -27,6 +28,7 @@ export const App = () => {
 
 					<Route path="/products/:name" element={<ProductDetailsPage />} />
 					<Route path="basket" element={<BasketPage />} />
+					<Route path="checkout" element={<CheckoutPage />} />
 				</Routes>
 
 				<Footer />
