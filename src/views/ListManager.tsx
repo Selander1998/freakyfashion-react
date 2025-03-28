@@ -1,23 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 import { ProductCardProps } from "./ProductDetailsPage/subs/ProductCard";
 import { groupBy } from "./BasketPage/groupBy";
 
 interface ListPageProps {
 	pageTitle: string;
-	buttonText: string;
-	buttonLink?: string;
 	onButtonClick?: () => void;
 }
 
-export const ListPage: React.FC<ListPageProps> = ({
-	pageTitle,
-	buttonText,
-	buttonLink,
-	onButtonClick,
-}) => {
+export const ListPage: React.FC<ListPageProps> = ({ pageTitle }) => {
 	const [listState, setListState] = useState<ProductCardProps["article"][]>(
 		JSON.parse(localStorage.getItem("cart") || "[]")
 	);
@@ -84,21 +76,6 @@ export const ListPage: React.FC<ListPageProps> = ({
 					</div>
 				</div>
 			))}
-			<div className="flex justify-center pt-6">
-				{buttonLink ? (
-					<Link to={buttonLink}>
-						<button className="border-2 text-2xl pt-2 pb-2 pr-8 pl-8 cursor-pointer">
-							{buttonText}
-						</button>
-					</Link>
-				) : (
-					<button
-						className="border-2 text-2xl pt-2 pb-2 pr-8 pl-8 cursor-pointer"
-						onClick={onButtonClick}>
-						{buttonText}
-					</button>
-				)}
-			</div>
 		</div>
 	);
 };
