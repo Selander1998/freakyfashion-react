@@ -9,6 +9,7 @@ import { BasketPage } from "./views/BasketPage";
 import { CheckoutPage } from "./views/CheckoutPage";
 import { SearchPage } from "./views/SearchPage";
 import { AdminProductListPage } from "./views/AdminPages/ProductListPage";
+import { AdminNewProductPage } from "./views/AdminPages/NewProductPage";
 
 const ConditionalHero = () => {
 	const location = useLocation();
@@ -35,6 +36,7 @@ export const App = () => {
 					<Route path="checkout" element={<CheckoutPage />} />
 					<Route path="search" element={<SearchPage />} />
 					<Route path="admin/products" element={<AdminProductListPage />} />
+					<Route path="admin/products/new" element={<AdminNewProductPage />} />
 				</Routes>
 				{!isAdminRoute && <Footer />}
 			</BrowserRouter>
