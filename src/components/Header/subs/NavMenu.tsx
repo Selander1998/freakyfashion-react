@@ -12,7 +12,7 @@ export const NavMenu = () => {
 	const navItems = ["Nyheter", "Topplistan", "Rea", "Kampanjer"];
 	return (
 		<nav>
-			<ul className="flex flex-col space-y-0.5">
+			<ul className="flex flex-col space-y-0.5 sm:flex-row sm:space-x-4 sm:p-3 sm:pl-0">
 				{navItems.map((item) => (
 					<li key={item}>
 						<a href="#" className={navLinkClasses}>
