@@ -13,7 +13,7 @@ import { AdminNewProductPage } from "./views/AdminPages/NewProductPage";
 
 const ConditionalHero = () => {
 	const location = useLocation();
-	const paths = ["/products/", "/basket", "/checkout"];
+	const paths = ["/products/", "/basket", "/checkout", "/search"];
 	const match = location.pathname.startsWith("/products/") || paths.includes(location.pathname);
 
 	return match ? null : <Hero />;
