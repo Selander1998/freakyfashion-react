@@ -2,7 +2,7 @@ interface DetailsMenuItemProps {
 	open: boolean;
 	title: string;
 	subValues: string[];
-	styling: string;
+	styling?: string;
 }
 
 const CreateDetailsMenuItem = ({ open, title, subValues, styling }: DetailsMenuItemProps) => {
@@ -18,19 +18,24 @@ const CreateDetailsMenuItem = ({ open, title, subValues, styling }: DetailsMenuI
 	);
 };
 
-interface MenuItem {
-	open: boolean;
-	title: string;
-	subValues: string[];
-	styling: string;
-}
+const DesktopMenuColumn = ({ title, subValues }: { title: string; subValues: string[] }) => {
+	return (
+		<div className="flex flex-col">
+			<h3 className="font-bold mb-2">{title}</h3>
+			{subValues.map((value) => (
+				<span key={value} className="mb-1 block">
+					{value}
+				</span>
+			))}
+		</div>
+	);
+};
 
-const MenuItems: MenuItem[] = [
+const MenuItems: DetailsMenuItemProps[] = [
 	{
 		open: true,
 		title: "Shopping",
 		subValues: ["Vinterjackor", "Pufferjackor", "Kappa", "Trenchcoats"],
-		styling: "",
 	},
 	{
 		open: false,
@@ -42,23 +47,35 @@ const MenuItems: MenuItem[] = [
 		open: false,
 		title: "Kundtjänst",
 		subValues: ["Returpolicy", "Integritetspolicy"],
-		styling: "",
 	},
 ];
 
 export const DetailsItems = () => {
 	return (
-		<section className="sm:hidden">
-			{MenuItems.map((item) => (
-				<CreateDetailsMenuItem
-					key={item.title}
-					open={item.open}
-					title={item.title}
-					subValues={item.subValues}
-					styling={item.styling}
-				/>
-			))}
-			<p className="text-center pt-6 sm:mb-8">{"\u00A9"} Freaky Fashion</p>
-		</section>
+		<div>
+			<div className="sm:hidden">
+				{MenuItems.map((item) => (
+					<CreateDetailsMenuItem
+						key={item.title}
+						open={item.open}
+						title={item.title}
+						subValues={item.subValues}
+						styling={item.styling}
+					/>
+				))}
+				<p className="text-center pt-6">{"\u00A9"} Freaky Fashion</p>
+			</div>
+
+			<div className="hidden sm:block">
+				<div className="border border-gray-200 p-6">
+					<div className="grid grid-cols-3 gap-8">
+						{MenuItems.map((item) => (
+							<DesktopMenuColumn key={item.title} title={item.title} subValues={item.subValues} />
+						))}
+					</div>
+					<p className="text-center pt-6 mb-2">{"\u00A9"} Freaky Fashion</p>
+				</div>
+			</div>
+		</div>
 	);
 };

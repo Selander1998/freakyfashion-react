@@ -26,7 +26,7 @@ export const App = () => {
 		<div className={`App ${isAdminRoute ? "p-0" : "p-4"}`}>
 			<BrowserRouter>
 				{!isAdminRoute && <Header />}
-				{!isAdminRoute && <ConditionalHero />}{" "}
+				{!isAdminRoute && <ConditionalHero />}
 				{/* Multilayered check or whatever, who cares lmao */}
 				<Routes>
 					<Route path="/" element={<Landingpage />} />
