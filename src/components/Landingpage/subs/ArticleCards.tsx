@@ -25,7 +25,7 @@ const Card = ({ name, price, imageUrl, brand, createdAt }: CardProps) => {
 	if (isItemHidden(createdAt)) return null;
 
 	return (
-		<div className="relative flex flex-col p-2">
+		<div className="relative flex flex-col p-1">
 			{isItemNew(createdAt) && (
 				<p className="absolute top-4 left-4 bg-green-400 text-white text-sm px-2 py-1 rounded border-2 border-white">
 					Nyhet
@@ -56,7 +56,7 @@ export const ArticleCards = () => {
 
 	if (!loading && !error) {
 		return (
-			<div className="grid sm:grid-cols-2 lg:grid-cols-4">
+			<div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 				{articles.map((article) => (
 					<Card
 						key={article.id}
