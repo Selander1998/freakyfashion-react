@@ -22,37 +22,41 @@ const isItemHidden = (createdAt: Date) => {
 };
 
 const Card = ({ name, price, imageUrl, brand, createdAt }: CardProps) => {
-	if (isItemHidden(createdAt)) {
-		return null;
-	}
+	if (isItemHidden(createdAt)) return null;
 
 	return (
-		<div className="relative grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-4">
+		<div className="relative flex flex-col p-2">
 			{isItemNew(createdAt) && (
-				<p className="absolute bg-green-400 top-7 left-7 border-2 p-1">Nyhet</p>
+				<p className="absolute top-4 left-4 bg-green-400 text-white text-sm px-2 py-1 rounded border-2 border-white">
+					Nyhet
+				</p>
 			)}
+
 			<a href={`/products/${name}`}>
-				{/* FIXME: This link should look like "/products/svart-tshirt" */}
-				<img src={imageUrl} alt={name} className="w-full" />
+				<img src={imageUrl} alt={name} className="w-full h-auto object-cover" />
 			</a>
-			<a href="#" className="absolute right-7 bottom-[6.5rem]">
-				{/* No idea how to do this properly */}
-				<FontAwesomeIcon icon={faHeart} className="text-2xl" />
-			</a>
-			<div className="flex justify-between relative">
-				<h3>{name}</h3>
-				<span>{price}kr</span>
+
+			<div className="flex flex-col justify-between flex-1 mt-4">
+				<div className="flex justify-between items-center">
+					<h3 className="text-sm font-medium">{name}</h3>
+					<span className="text-sm">{price}kr</span>
+				</div>
+				<span className="text-sm text-gray-600 mt-1">{brand}</span>
 			</div>
-			<span>{brand}</span>
+
+			<button className="absolute bottom-22 right-8">
+				<FontAwesomeIcon icon={faHeart} className="text-2xl text-black" />
+			</button>
 		</div>
 	);
 };
 
 export const ArticleCards = () => {
 	const { articles, error, loading } = useArticles(8);
-	if (!loading && !error)
+
+	if (!loading && !error) {
 		return (
-			<div>
+			<div className="grid sm:grid-cols-2 lg:grid-cols-4">
 				{articles.map((article) => (
 					<Card
 						key={article.id}
@@ -65,4 +69,5 @@ export const ArticleCards = () => {
 				))}
 			</div>
 		);
+	}
 };
