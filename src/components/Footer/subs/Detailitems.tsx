@@ -52,7 +52,7 @@ const MenuItems: DetailsMenuItemProps[] = [
 
 export const DetailsItems = () => {
 	return (
-		<div>
+		<div className="bg-gray-200">
 			<div className="sm:hidden">
 				{MenuItems.map((item) => (
 					<CreateDetailsMenuItem
@@ -67,7 +67,7 @@ export const DetailsItems = () => {
 			</div>
 
 			<div className="hidden sm:block">
-				<div className="border border-gray-200 p-6">
+				<div className="border border-gray-800 p-4">
 					<div className="grid grid-cols-3 gap-8">
 						{MenuItems.map((item) => (
 							<DesktopMenuColumn key={item.title} title={item.title} subValues={item.subValues} />
