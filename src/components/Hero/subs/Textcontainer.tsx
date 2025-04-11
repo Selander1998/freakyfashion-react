@@ -1,7 +1,7 @@
 export const TextContainer = () => {
 	return (
-		<div className="text-center p-2">
-			<h1>Lorem ipsum dolor</h1>
+		<div className="text-center p-6">
+			<div className="font-bold pb-4">Lorem ipsum dolor</div>
 			<p>
 				Vestibulum iaculis justo ac dui semper dictum. Maecenas ac porttitor dui, in luctus arcu.
 				Nulla id orci eget tellus suscipit faucibus. Vivamus tincidunt tempus dui nec euismod. Fusce
