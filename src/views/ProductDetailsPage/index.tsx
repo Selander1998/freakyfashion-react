@@ -1,5 +1,11 @@
+import { Carousel } from "./subs/Carousel";
 import { ProductPage } from "./subs/ProductPage";
 
 export const ProductDetailsPage = () => {
-	return <ProductPage />;
+	return (
+		<div>
+			<ProductPage />
+			<Carousel />
+		</div>
+	);
 };
