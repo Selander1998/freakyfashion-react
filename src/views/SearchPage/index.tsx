@@ -12,30 +12,24 @@ type CardProps = {
 	brand: string;
 };
 
-const Card = ({
-	name,
-	price,
-	imageUrl,
-	brand,
-}: {
-	name: string;
-	price: number;
-	imageUrl: string;
-	brand: string;
-}) => {
+const Card = ({ name, price, imageUrl, brand }: CardProps) => {
 	return (
-		<div className="relative grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-4">
+		<div className="relative flex flex-col p-1">
 			<a href={`/products/${name}`}>
-				<img src={imageUrl} alt={name} className="w-full" />
+				<img src={imageUrl} alt={name} className="w-full h-auto object-cover" />
 			</a>
-			<a href="#" className="absolute right-7 bottom-[6.5rem]">
-				<FontAwesomeIcon icon={faHeart} className="text-2xl" />
-			</a>
-			<div className="flex justify-between relative">
-				<h3>{name}</h3>
-				<span>{price}kr</span>
+
+			<div className="flex flex-col justify-between flex-1 mt-4">
+				<div className="flex justify-between items-center">
+					<h3 className="text-sm font-medium">{name}</h3>
+					<span className="text-sm">{price}kr</span>
+				</div>
+				<span className="text-sm text-gray-600 mt-1">{brand}</span>
 			</div>
-			<span>{brand}</span>
+
+			<button className="absolute bottom-22 right-8">
+				<FontAwesomeIcon icon={faHeart} className="text-2xl text-black" />
+			</button>
 		</div>
 	);
 };
@@ -84,15 +78,18 @@ export const SearchPage = () => {
 			<div className="text-2xl font-bold text-center mt-4 mb-4">
 				Hittade {articles.length} {articles.length === 1 ? "produkt" : "produkter"}
 			</div>
-			{articles.map((article) => (
-				<Card
-					key={article.id}
-					name={article.name}
-					price={article.price}
-					imageUrl={article.imageUrl}
-					brand={article.brand}
-				/>
-			))}
+			<div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+				{articles.map((article) => (
+					<Card
+						key={article.id}
+						id={article.id}
+						name={article.name}
+						price={article.price}
+						imageUrl={article.imageUrl}
+						brand={article.brand}
+					/>
+				))}
+			</div>
 		</div>
 	);
 };
