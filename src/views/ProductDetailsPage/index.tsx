@@ -5,7 +5,9 @@ export const ProductDetailsPage = () => {
 	return (
 		<div>
 			<ProductPage />
-			<Carousel />
+			<div className="hidden sm:block">
+				<Carousel />
+			</div>
 		</div>
 	);
 };

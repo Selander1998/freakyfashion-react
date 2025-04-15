@@ -85,11 +85,13 @@ export const Carousel = () => {
 								<div className="border border-gray-200 rounded h-full flex flex-col">
 									<div className="aspect-square relative">
 										<div className="absolute inset-0 flex items-center justify-center border-b">
-											<img
-												src={product.imageUrl}
-												alt={product.name}
-												className="max-w-full max-h-full object-contain"
-											/>
+											<a href={`/products/${product.name}`}>
+												<img
+													src={product.imageUrl}
+													alt={product.name}
+													className="max-w-full max-h-full object-contain"
+												/>
+											</a>
 										</div>
 									</div>
 
