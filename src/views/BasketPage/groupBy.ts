@@ -1,4 +1,4 @@
-// I found this on the interwebs, i found this polyfill for groupBy on object
+// I found this polyfill for groupBy on object on the interwebs
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy
 
 export const groupBy = <T>(

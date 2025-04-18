@@ -1,9 +1,9 @@
-import { ListPage } from "../ListManager";
+import { BasketList } from "../ListManager";
 
 export const CheckoutPage = () => {
 	return (
 		<div>
-			<ListPage pageTitle="Kassan" />
+			<BasketList />
 			<div className="text-center text-2xl mt-6">Kunduppgifter</div>
 			<form className="mt-4 flex flex-col">
 				<label>Förnamn</label>
